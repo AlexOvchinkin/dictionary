@@ -27,8 +27,6 @@ export class SelectionService {
     private checkArray: CheckLetter[];
     private pickArray: PickLetter[];
 
-    public updateStream$$: Subject<UpdateObject> = new Subject();
-
     constructor() {
         this.currentLetter = 0;
     }
@@ -100,24 +98,6 @@ export class SelectionService {
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    // действует при неправильном ответе
-    private setWrongAnswer(num: number): void {
-        this.pickArray[num].isWrong = true;
-
-        setTimeout(((num: number) => {
-            return () => {
-                this.pickArray[num].isWrong = false;
-
-                // обновим массивы у подписчиков
-                this.updateStream$$.next({
-                    position: num,
-                    checkLetter: this.checkArray[num],
-                    pickLetter: this.pickArray[num]
-                });
-            }
-        })(num), 500);
-    }
-
     // проверка правильности выбранной буквы буквы
     public checkPickLetter(num: number): void {
         // если текущая буква - пробел, то пропустим ее
@@ -135,13 +115,6 @@ export class SelectionService {
 
             this.currentLetter++;
 
-            // обновим массивы у подписчиков
-            this.updateStream$$.next({
-                position: num,
-                checkLetter: this.checkArray[num],
-                pickLetter: this.pickArray[num]
-            });
-
         } else {
             // если НЕ правильно
             this.setWrongAnswer(num);
@@ -154,6 +127,17 @@ export class SelectionService {
                 alert('The end !');
             }, 500);
         }
+    }
+
+    // действует при неправильном ответе
+    private setWrongAnswer(num: number): void {
+        this.pickArray[num].isWrong = true;
+
+        setTimeout(((num: number) => {
+            return () => {
+                this.pickArray[num].isWrong = false;
+            }
+        })(num), 500);
     }
 }
 

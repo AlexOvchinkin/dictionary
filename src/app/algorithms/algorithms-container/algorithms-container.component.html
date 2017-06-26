@@ -1,1 +1,4 @@
-<app-selection [word]="'congratulations'"></app-selection>
+<app-translate [testingWord]="testingWord"
+               [translates]="translates"></app-translate>
+
+<app-selection [word]="testingWord.original"></app-selection>

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {SelectionService, CheckLetter, PickLetter, UpdateObject} from "./selection.service";
+import {SelectionService, CheckLetter, PickLetter} from "./selection.service";
 
 @Component({
   selector: 'app-selection',
@@ -25,12 +25,6 @@ export class SelectionComponent implements OnInit {
 
     this.checkArray = this.selectionService.getCheckArray();
     this.pickArray = this.selectionService.getPickArray();
-
-    // подпишемся на обновления массивов
-    this.selectionService.updateStream$$.subscribe( (updateObject: UpdateObject) => {
-      this.checkArray[updateObject.position] = updateObject.checkLetter;
-      this.pickArray[updateObject.position] = updateObject.pickLetter;
-    } );
   }
 
 }
