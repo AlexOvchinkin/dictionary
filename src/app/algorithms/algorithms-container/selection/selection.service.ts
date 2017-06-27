@@ -26,9 +26,13 @@ export class SelectionService {
 
     private checkArray: CheckLetter[];
     private pickArray: PickLetter[];
+    private answerWasWrong: boolean;
+
+    public algorithmEnd$$: Subject<boolean> = new Subject();
 
     constructor() {
         this.currentLetter = 0;
+        this.answerWasWrong = false;
     }
 
     public getCheckArray(): CheckLetter[] {
@@ -122,16 +126,15 @@ export class SelectionService {
 
         // конец теста
         if (this.currentLetter == this.checkArray.length) {
-            // здесь отсылать "наверх" сообщение о конце теста
-            setTimeout(() => {
-                alert('The end !');
-            }, 500);
+            // сообщение о конце теста
+            this.algorithmEnd$$.next(this.answerWasWrong);
         }
     }
 
     // действует при неправильном ответе
     private setWrongAnswer(num: number): void {
         this.pickArray[num].isWrong = true;
+        this.answerWasWrong = true;
 
         setTimeout(((num: number) => {
             return () => {

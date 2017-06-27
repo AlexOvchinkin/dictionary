@@ -1,4 +1,6 @@
 <app-translate [testingWord]="testingWord"
-               [translates]="translates"></app-translate>
+               [translates]="translates"
+               [algorithmChanger]="algorithmsContainerService.algorithmChanger$$"></app-translate>
 
-<app-selection [word]="testingWord.original"></app-selection>
+<app-selection [word]="testingWord.original"
+               [algorithmChanger]="algorithmsContainerService.algorithmChanger$$"></app-selection>

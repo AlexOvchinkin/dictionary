@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SelectionService, CheckLetter, PickLetter} from "./selection.service";
+import {Subject} from "rxjs/Subject";
 
 @Component({
   selector: 'app-selection',
@@ -10,6 +11,7 @@ import {SelectionService, CheckLetter, PickLetter} from "./selection.service";
 export class SelectionComponent implements OnInit {
 
   @Input() word;
+  @Input() algorithmChanger: Subject<boolean>;
 
   public checkArray: CheckLetter[];
   public pickArray: PickLetter[];
@@ -25,6 +27,11 @@ export class SelectionComponent implements OnInit {
 
     this.checkArray = this.selectionService.getCheckArray();
     this.pickArray = this.selectionService.getPickArray();
+
+    this.selectionService.algorithmEnd$$.subscribe( (answerWasWrong: boolean) => {
+      // сообщить контейнеру об результате теста
+      this.algorithmChanger.next(answerWasWrong);
+    } );
   }
 
 }

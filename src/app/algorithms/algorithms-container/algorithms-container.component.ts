@@ -14,9 +14,15 @@ export class AlgorithmsContainerComponent implements OnInit {
   public testingWord: Word;
   public translates: Word[];
 
-  constructor(private algorithmsContainerService: AlgorithmsContainerService) { }
+  constructor(public algorithmsContainerService: AlgorithmsContainerService) { }
 
   ngOnInit() {
+
+    // подпишемся на результаты тестов
+    this.algorithmsContainerService.algorithmChanger$$.subscribe( (answerWasWrong: boolean) => {
+      this.algorithmsContainerService.change(answerWasWrong);
+    } );
+
     this.testingWord = {
       original: 'mouse',
       translate: 'мышь'

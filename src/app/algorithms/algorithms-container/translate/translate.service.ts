@@ -6,8 +6,15 @@ export class TranslateService {
 
     private testingWord: WordExt;
     private translates: WordExt[];
+    private answerWasWrong: boolean;
 
-    constructor() { }
+    constructor() {
+        this.answerWasWrong = false;
+    }
+
+    public getAnswerStatus() {
+        return this.answerWasWrong;
+    }
 
     // с этой функции начинается новый тест
     public setNewWord(word: WordExt, translates: WordExt[]): void {
@@ -39,6 +46,9 @@ export class TranslateService {
     // неправильный ответ
     private setWrongAnswer(num: number): void {
         this.translates[num].isWrong = true;
+
+        // зафиксируем, что был неправильный ответ
+        this.answerWasWrong = true;
 
         setTimeout(((num: number) => {
             return () => {
