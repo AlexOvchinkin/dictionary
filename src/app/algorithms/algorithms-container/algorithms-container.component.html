@@ -1,6 +1,10 @@
-<app-translate [testingWord]="testingWord"
-               [translates]="translates"
+<app-translate *ngIf="currentAlgorithmName == algorithmsContainerService.TRANSLATE"
+               [testingWord]="currentAlgorithm.data.word"
+               [translates]="currentAlgorithm.data.translates"
+               [hash]="hash"
                [algorithmChanger]="algorithmsContainerService.algorithmChanger$$"></app-translate>
 
-<app-selection [word]="testingWord.original"
+<app-selection *ngIf="currentAlgorithmName == algorithmsContainerService.SELECTION"
+               [word]="currentAlgorithm.data.word.original"
+               [hash]="hash"
                [algorithmChanger]="algorithmsContainerService.algorithmChanger$$"></app-selection>

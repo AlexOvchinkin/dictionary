@@ -3,9 +3,19 @@ export type Word = {
     translate: string
 }
 
+export type WordObject = {
+    word: Word,
+    translates: Word[]
+}
+
 export type WordExt = {
     original: string,
     translate: string,
     isWrong?: boolean,
     isRight?: boolean
+}
+
+export type Algorithm = {
+    name: string,
+    data: WordObject
 }

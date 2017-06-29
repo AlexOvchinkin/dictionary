@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {WordExt} from "../types";
 
+
 @Injectable()
 export class TranslateService {
 
@@ -8,9 +9,7 @@ export class TranslateService {
     private translates: WordExt[];
     private answerWasWrong: boolean;
 
-    constructor() {
-        this.answerWasWrong = false;
-    }
+    constructor() { }
 
     public getAnswerStatus() {
         return this.answerWasWrong;
@@ -20,6 +19,7 @@ export class TranslateService {
     public setNewWord(word: WordExt, translates: WordExt[]): void {
         this.testingWord = word;
         this.translates = translates;
+        this.answerWasWrong = false;
 
         this.translates.forEach( (item) => {
             item.isRight = false;

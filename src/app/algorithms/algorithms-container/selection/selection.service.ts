@@ -30,10 +30,7 @@ export class SelectionService {
 
     public algorithmEnd$$: Subject<boolean> = new Subject();
 
-    constructor() {
-        this.currentLetter = 0;
-        this.answerWasWrong = false;
-    }
+    constructor() { }
 
     public getCheckArray(): CheckLetter[] {
         return this.checkArray;
@@ -48,6 +45,9 @@ export class SelectionService {
         let lettersArray: string[] = word.split('');
         this.checkArray = this.getCheckLetters(lettersArray);
         this.pickArray = this.getPickLetters(lettersArray);
+
+        this.currentLetter = 0;
+        this.answerWasWrong = false;
     }
 
     // получает массив объектов CheckLetter из массива букв

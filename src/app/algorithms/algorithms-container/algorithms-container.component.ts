@@ -1,55 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AlgorithmsContainerService} from './algorithms-container.service';
-import {Word} from "./types";
-
+import {Algorithm} from './types';
 
 @Component({
-  selector: 'app-algorithms-container',
-  templateUrl: './algorithms-container.component.html',
-  styleUrls: ['./algorithms-container.component.css'],
-  providers: [AlgorithmsContainerService]
+    selector: 'app-algorithms-container',
+    templateUrl: './algorithms-container.component.html',
+    styleUrls: ['./algorithms-container.component.css'],
+    providers: [AlgorithmsContainerService]
 })
 export class AlgorithmsContainerComponent implements OnInit {
 
-  public testingWord: Word;
-  public translates: Word[];
+    public currentAlgorithm: Algorithm;
+    public currentAlgorithmName: string;
+    public hash: number = 0;
 
-  constructor(public algorithmsContainerService: AlgorithmsContainerService) { }
-
-  ngOnInit() {
-
-    // подпишемся на результаты тестов
-    this.algorithmsContainerService.algorithmChanger$$.subscribe( (answerWasWrong: boolean) => {
-      this.algorithmsContainerService.change(answerWasWrong);
-    } );
-
-    this.testingWord = {
-      original: 'mouse',
-      translate: 'мышь'
+    constructor(public algorithmsContainerService: AlgorithmsContainerService) {
     }
 
-    this.translates = [
-      {
-        original: 'rat',
-        translate: 'крыса'
-      },
-      {
-        original: 'mouse',
-        translate: 'мышь'
-      },
-      {
-        original: 'horse',
-        translate: 'лошадь'
-      },
-      {
-        original: 'cat',
-        translate: 'кошка'
-      },
-      {
-        original: 'dog',
-        translate: 'собака'
-      }
-    ]
-  }
+    ngOnInit() {
+        this.updateData();
+
+        // подпишемся на результаты тестов
+        this.algorithmsContainerService.algorithmChanger$$.subscribe((answerWasWrong: boolean) => {
+            this.algorithmsContainerService.change(answerWasWrong);
+            this.updateData();
+            this.hash++;
+        });
+    }
+
+    private updateData(): void {
+        this.currentAlgorithm = this.algorithmsContainerService.currentAlgorithm;
+        this.currentAlgorithmName = this.algorithmsContainerService.currentAlgorithmName;
+    }
 
 }

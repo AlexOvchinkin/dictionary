@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {TranslateService} from "./translate.service";
-import {WordExt} from "../types";
 import {Subject} from "rxjs/Subject";
+import {WordExt} from "../types";
 
 @Component({
     selector: 'app-translate',
@@ -9,16 +9,24 @@ import {Subject} from "rxjs/Subject";
     styleUrls: ['./translate.component.css'],
     providers: [TranslateService]
 })
-export class TranslateComponent implements OnInit {
+export class TranslateComponent implements OnInit, OnChanges {
 
     @Input() testingWord: WordExt;
     @Input() translates: WordExt[];
     @Input() algorithmChanger: Subject<boolean>;
 
+    // случайное число - чтобы что-то изменялось в компоненте, если нужно
+    // вызвать еще раз такой-же, иначе Ангуляр его не перерисовывает
+    @Input() hash: number;
+
     constructor(private translateService: TranslateService) {
     }
 
     ngOnInit() {
+        this.translateService.setNewWord(this.testingWord, this.translates);
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
         this.translateService.setNewWord(this.testingWord, this.translates);
     }
 

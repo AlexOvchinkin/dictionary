@@ -1,37 +1,65 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {SelectionService, CheckLetter, PickLetter} from "./selection.service";
 import {Subject} from "rxjs/Subject";
 
 @Component({
-  selector: 'app-selection',
-  templateUrl: './selection.component.html',
-  styleUrls: ['./selection.component.css'],
-  providers: [SelectionService]
+    selector: 'app-selection',
+    templateUrl: './selection.component.html',
+    styleUrls: ['./selection.component.css'],
+    providers: [SelectionService]
 })
-export class SelectionComponent implements OnInit {
+export class SelectionComponent implements OnInit, OnChanges {
 
-  @Input() word;
-  @Input() algorithmChanger: Subject<boolean>;
+    @Input() word;
+    @Input() algorithmChanger: Subject<boolean>;
 
-  public checkArray: CheckLetter[];
-  public pickArray: PickLetter[];
+    // случайное число - чтобы что-то изменялось в компоненте, если нужно
+    // вызвать еще раз такой-же, иначе Ангуляр его не перерисовывает
+    @Input() hash: number;
 
-  constructor(public selectionService: SelectionService) { }
 
-  public selectPickLetter(num: number): void {
-    this.selectionService.checkPickLetter(num);
-  }
+    public checkArray: CheckLetter[];
+    public pickArray: PickLetter[];
 
-  ngOnInit() {
-    this.selectionService.setNewWord(this.word);
+    constructor(public selectionService: SelectionService) {
+    }
 
-    this.checkArray = this.selectionService.getCheckArray();
-    this.pickArray = this.selectionService.getPickArray();
+    public selectPickLetter(num: number): void {
+        this.selectionService.checkPickLetter(num);
+        this.updateData();
+    }
 
-    this.selectionService.algorithmEnd$$.subscribe( (answerWasWrong: boolean) => {
-      // сообщить контейнеру об результате теста
-      this.algorithmChanger.next(answerWasWrong);
-    } );
-  }
+    ngOnInit() {
+        this.selectionService.algorithmEnd$$.subscribe((answerWasWrong: boolean) => {
+            // сообщить контейнеру об результате теста
+            this.algorithmChanger.next(answerWasWrong);
+        });
+    }
+
+    private updateData(): void {
+        this.checkArray = this.selectionService.getCheckArray();
+        this.pickArray = this.selectionService.getPickArray();
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        this.selectionService.setNewWord(this.word);
+        this.updateData();
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
