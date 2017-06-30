@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {TRAINING_PAGE} from "../algorithms/algorithms-container/types";
+import {TRAINING_PAGE} from "../types";
 
 @Component({
   selector: 'app-enter',

@@ -7,7 +7,7 @@ import {AlgorithmsContainerComponent} from './algorithms/algorithms-container/al
 import {TranslateComponent} from './algorithms/algorithms-container/translate/translate.component';
 import {EnterComponent} from './enter/enter.component';
 import {Route, RouterModule} from "@angular/router";
-import {HOME_PAGE, TRAINING_PAGE} from "./algorithms/algorithms-container/types";
+import {HOME_PAGE, TRAINING_PAGE} from "./types";
 
 const routes: Route[] = [
     { path: HOME_PAGE, component: EnterComponent },

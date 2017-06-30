@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Subject} from "rxjs/Subject";
-import {WordObject, Algorithm, HOME_PAGE} from "./types";
+import {WordObject, Algorithm, HOME_PAGE} from "../../types";
 import {Observable} from "rxjs/Observable";
 import {Router} from "@angular/router";
 

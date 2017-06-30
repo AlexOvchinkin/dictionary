@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AlgorithmsContainerService} from './algorithms-container.service';
-import {Algorithm} from './types';
+import {Algorithm} from '../../types';
 
 @Component({
     selector: 'app-algorithms-container',

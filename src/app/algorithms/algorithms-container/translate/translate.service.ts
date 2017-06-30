@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {WordExt} from "../types";
+import {WordExt} from "../../../types";
 
 
 @Injectable()

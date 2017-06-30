@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {TranslateService} from "./translate.service";
 import {Subject} from "rxjs/Subject";
-import {WordExt} from "../types";
+import {WordExt} from "../../../types";
 
 @Component({
     selector: 'app-translate',
