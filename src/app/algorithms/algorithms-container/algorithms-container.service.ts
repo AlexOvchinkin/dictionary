@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Subject} from "rxjs/Subject";
-import {WordObject, Algorithm} from "./types";
+import {WordObject, Algorithm, HOME_PAGE} from "./types";
 import {Observable} from "rxjs/Observable";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AlgorithmsContainerService {
@@ -27,7 +28,7 @@ export class AlgorithmsContainerService {
 
 
     // КОНСТРУКТОР
-    constructor() {
+    constructor(private router: Router) {
         // заполним массив имен алгоритмов
         this.algorithmNames = [
             this.SELECTION,
@@ -97,9 +98,9 @@ export class AlgorithmsContainerService {
             this.hash++;
         } else {
             // этот пул тестов закончен
-            // сохранить результаты на бэкенде и
+            // сохранить результаты на бэкенд и
             // переход на главную страницу
-            alert('THE END!');
+            this.router.navigate([HOME_PAGE]);
         }
     }
 

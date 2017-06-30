@@ -19,3 +19,6 @@ export type Algorithm = {
     name: string,
     data: WordObject
 }
+
+export const HOME_PAGE: string = '';
+export const TRAINING_PAGE: string = 'training';
