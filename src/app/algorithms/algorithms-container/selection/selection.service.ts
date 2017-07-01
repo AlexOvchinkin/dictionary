@@ -29,6 +29,7 @@ export class SelectionService {
     private answerWasWrong: boolean;
 
     public algorithmEnd$$: Subject<boolean> = new Subject();
+    public updateStream$$: Subject<any> = new Subject();
 
     constructor() { }
 
@@ -109,16 +110,10 @@ export class SelectionService {
             this.currentLetter++;
         }
 
-        // если правильно
         if (this.pickArray[num].letter == this.checkArray[this.currentLetter].letter) {
-            // проверяемую букву покажем
-            this.checkArray[this.currentLetter].isShown = true;
-
-            // нажатую скроем
-            this.pickArray[num].isShown = false;
-
+            // если правильно
+            this.setRightAnswer(num);
             this.currentLetter++;
-
         } else {
             // если НЕ правильно
             this.setWrongAnswer(num);
@@ -131,7 +126,16 @@ export class SelectionService {
         }
     }
 
-    // действует при неправильном ответе
+    // действует при правильном ответе
+    private setRightAnswer(num: number): void {
+        // проверяемую букву покажем
+        this.checkArray[this.currentLetter].isShown = true;
+
+        // нажатую скроем
+        this.pickArray[num].isShown = false;
+    }
+
+    // действует при НЕправильном ответе
     private setWrongAnswer(num: number): void {
         this.pickArray[num].isWrong = true;
         this.answerWasWrong = true;
