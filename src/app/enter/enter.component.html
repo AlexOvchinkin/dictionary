@@ -1,2 +1,22 @@
-<h1>This is main Page-Enter</h1>
-<button (click)="goTraining()">go to training ...</button>
+<section class="enter">
+    <h2 class="enter__title">ИНФО</h2>
+    <div class="enter__data">
+        <div class="enter__data-left">
+            <p class="enter__data-info">
+                Слов на изучении:
+                <span class="enter__number">{{ learningWordsCount }}</span>
+            </p>
+            <p class="enter__data-info">
+                Слов для повторения:
+                <span class="enter__number">{{ trainingWordsCount }}</span>
+            </p>
+        </div>
+        <div class="enter__data-right">
+            <div class="enter__btn"
+                 (click)="goTraining()">
+                Тренировка
+            </div>
+            <div class="enter__btn  btn-orange">Блиц-проверка</div>
+        </div>
+    </div>
+</section>

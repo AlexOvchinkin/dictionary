@@ -20,5 +20,33 @@ export type Algorithm = {
     data: WordObject
 }
 
+export type LearningData = {
+    learning: number,
+    training: number
+}
+
 export const HOME_PAGE: string = '';
 export const TRAINING_PAGE: string = 'training';
+export const REGISTRATION_PAGE: string = 'registration';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

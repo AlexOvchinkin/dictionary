@@ -93,8 +93,10 @@
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 15px 30px;
     transition-duration: 0.3s;
+    box-shadow: 0 2px 5px 1px darkgray;
+    font-weight: bold;
 }
 
 .selection__sound-btn:hover {

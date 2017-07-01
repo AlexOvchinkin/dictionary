@@ -7,11 +7,15 @@ import {AlgorithmsContainerComponent} from './algorithms/algorithms-container/al
 import {TranslateComponent} from './algorithms/algorithms-container/translate/translate.component';
 import {EnterComponent} from './enter/enter.component';
 import {Route, RouterModule} from "@angular/router";
-import {HOME_PAGE, TRAINING_PAGE} from "./types";
+import {HOME_PAGE, REGISTRATION_PAGE, TRAINING_PAGE} from "./types";
+import { HeaderComponent } from './header/header.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { AuthorisationComponent } from './authorisation/authorisation.component';
 
 const routes: Route[] = [
     { path: HOME_PAGE, component: EnterComponent },
-    { path: TRAINING_PAGE, component: AlgorithmsContainerComponent }
+    { path: TRAINING_PAGE, component: AlgorithmsContainerComponent },
+    { path: REGISTRATION_PAGE, component: RegistrationComponent }
 ];
 
 @NgModule({
@@ -20,7 +24,10 @@ const routes: Route[] = [
         SelectionComponent,
         AlgorithmsContainerComponent,
         TranslateComponent,
-        EnterComponent
+        EnterComponent,
+        HeaderComponent,
+        RegistrationComponent,
+        AuthorisationComponent
     ],
     imports: [
         BrowserModule,
