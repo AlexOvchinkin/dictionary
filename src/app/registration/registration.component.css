@@ -10,6 +10,7 @@
     align-items: center;
     padding: 20px 40px;
     width: 600px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .registration__title {
@@ -20,6 +21,7 @@
 
 .registration__table {
     color: #457070;
+    font-family: 'Roboto', sans-serif;
 }
 
 .registration__text {
@@ -48,7 +50,7 @@
     width: 100%;
     box-shadow: 0 2px 5px 1px darkgray;
     font-family: 'Roboto', sans-serif;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
 }
 
 .registration__btn:hover {

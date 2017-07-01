@@ -9,7 +9,7 @@
     box-shadow: 0 0 5px 2px darkgray;
     background-color: white;
     margin: 20px auto;
-    color: #34495E;
+    color: #525252;
     padding: 20px;
     font-family: 'Roboto', sans-serif;
 }
@@ -19,6 +19,7 @@
     text-align: center;
     font-size: 28px;
     margin-bottom: 60px;
+    color: #454545;
 }
 
 .enter__data {

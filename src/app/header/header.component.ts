@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {HOME_PAGE, REGISTRATION_PAGE} from "../types";
+import {AUTHORISATION_PAGE, HOME_PAGE, REGISTRATION_PAGE} from "../types";
 
 @Component({
   selector: 'app-header',
@@ -20,6 +20,10 @@ export class HeaderComponent implements OnInit {
 
   public selectRegistration(): void {
     this.router.navigate([REGISTRATION_PAGE])
+  }
+
+  public selectAuthorisation(): void {
+    this.router.navigate([AUTHORISATION_PAGE])
   }
 
 }
