@@ -26,6 +26,7 @@ export type LearningData = {
 }
 
 export const HOME_PAGE: string = '';
+export const ENTER_PAGE: string = 'enter';
 export const TRAINING_PAGE: string = 'training';
 export const REGISTRATION_PAGE: string = 'registration';
 export const AUTHORISATION_PAGE: string = 'authorisation';

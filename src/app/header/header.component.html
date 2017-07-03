@@ -8,16 +8,20 @@
         </a>
     </div>
     <div class="block-header__right-part">
-        <a class="block-header__link"
+        <a *ngIf="!isLogged()"
+           class="block-header__link"
            (click)="selectRegistration()">
             РЕГИСТРАЦИЯ
         </a>
-        <a class="block-header__link"
+        <a *ngIf="!isLogged()"
+           class="block-header__link"
            (click)="selectAuthorisation()">
             ВХОД
         </a>
-        <a class="block-header__link" href="#">
-            ЛИЧНЫЙ КАБИНЕТ
+        <a *ngIf="isLogged()"
+           class="block-header__link"
+           (click)="logout()">
+            ВЫЙТИ
         </a>
     </div>
 </header>
