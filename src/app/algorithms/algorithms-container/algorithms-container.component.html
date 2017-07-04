@@ -10,3 +10,14 @@
                    [hash]="hash"
                    [algorithmChanger]="algorithmsContainerService.algorithmChanger$$"></app-selection>
 </div>
+<div *ngIf="askDeactivate"
+     class="deactivate-popup">
+    <p class="deactivate-popup__question">Завершить тренировку?</p>
+    <div class="deactivate-popup__buttons">
+        <div class="deactivate-popup__btn" (click)="deactivate(true)">ДА</div>
+        <div class="deactivate-popup__btn" (click)="deactivate(false)">НЕТ</div>
+    </div>
+</div>
+<div *ngIf="askDeactivate"
+     class="deactivate-overlay">
+</div>

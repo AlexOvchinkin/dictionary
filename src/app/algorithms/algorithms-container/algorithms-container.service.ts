@@ -11,6 +11,10 @@ export class AlgorithmsContainerService {
     public TRANSLATE: string = 'translate';
     public algorithmNames: string[];
 
+    public allowDeactivate: boolean;
+    public deactivateURL: string = '';
+    public deactivateStream$$: Subject<boolean> = new Subject();
+
     private wordArray: WordObject[]; // слово + массив со словами
     private algorithmsArray: Algorithm[]; // имя алгоритма + wordArray
 
@@ -29,6 +33,8 @@ export class AlgorithmsContainerService {
 
     // КОНСТРУКТОР
     constructor(private router: Router) {
+        this.allowDeactivate = false;
+
         // заполним массив имен алгоритмов
         this.algorithmNames = [
             this.SELECTION,

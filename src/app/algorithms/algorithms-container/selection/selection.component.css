@@ -42,7 +42,7 @@
     width: 80%;
     align-items: center;
     border-radius: 2px;
-    box-shadow: 0 0 5px 2px darkgray;
+    box-shadow: 0 2px 5px 1px darkgray;
     background-color: white;
     margin: 0 auto;
     color: #454545;
@@ -118,22 +118,22 @@
 }
 
 .selection__pick-letter {
-    border: 1px solid gray;
     padding: 4px;
     width: 48px;
     text-align: center;
     margin: 4px 4px;
     color: white;
-    background-color: lightblue;
-    border: 1px solid lightgray;
+    background-color: #7ba3b1;
+    border: 1px solid #9fc8d6;
     border-radius: 2px;
     text-shadow: 0 0 2px darkgray;
     cursor: pointer;
     transition: all 0.3s ease-out;
+    box-shadow: 0 2px 5px 1px lightgray;
 }
 
 .selection__pick-letter:hover {
-    background-color: #7ba3b1;
+    background-color: #5a7886;
 }
 
 .selection__description {

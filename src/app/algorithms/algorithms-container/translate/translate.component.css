@@ -35,7 +35,7 @@
 }
 
 .translate {
-    box-shadow: 0 0 5px 2px darkgray;
+    box-shadow: 0 2px 5px 1px darkgray;
     border-radius: 2px;
     padding: 20px;
     width: 80%;
@@ -107,15 +107,19 @@
     font-size: 22px;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    border: 1px solid darkseagreen;
+    color: white;
+    background-color: #7ba3b1;
+    border: 1px solid #9fc8d6;
     border-radius: 2px;
     flex-wrap: wrap;
     transition-duration: 0.3s;
+    box-shadow: 0 2px 5px 1px lightgray;
+    text-shadow: 0 0 2px darkgray;
 }
 
 .translate__check-word:hover {
     border-radius: 2px;
-    background-color: darkseagreen;
+    background-color: #5a7886;
     cursor: pointer;
 }
 
