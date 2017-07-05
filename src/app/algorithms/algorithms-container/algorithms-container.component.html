@@ -14,8 +14,8 @@
      class="deactivate-popup">
     <p class="deactivate-popup__question">Завершить тренировку?</p>
     <div class="deactivate-popup__buttons">
-        <div class="deactivate-popup__btn" (click)="deactivate(true)">ДА</div>
-        <div class="deactivate-popup__btn" (click)="deactivate(false)">НЕТ</div>
+        <button md-button class="deactivate-popup__btn" (click)="deactivate(true)">ДА</button>
+        <button md-button class="deactivate-popup__btn" (click)="deactivate(false)">НЕТ</button>
     </div>
 </div>
 <div *ngIf="askDeactivate"

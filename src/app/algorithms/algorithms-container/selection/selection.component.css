@@ -95,8 +95,6 @@
     font-size: 18px;
     padding: 15px 30px;
     transition-duration: 0.3s;
-    box-shadow: 0 2px 5px 1px darkgray;
-    font-weight: bold;
 }
 
 .selection__sound-btn:hover {
@@ -129,7 +127,6 @@
     text-shadow: 0 0 2px darkgray;
     cursor: pointer;
     transition: all 0.3s ease-out;
-    box-shadow: 0 2px 5px 1px lightgray;
 }
 
 .selection__pick-letter:hover {

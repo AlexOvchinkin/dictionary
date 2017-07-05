@@ -16,6 +16,8 @@ import {AuthGuard} from "./guards/auth-guard";
 import {WelcomeComponent} from './welcome/welcome.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CanDeactivateGuard} from "./guards/can-deactivate.guard";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MdButtonModule} from "@angular/material";
 
 const routes: Route[] = [
     {path: HOME_PAGE, component: WelcomeComponent},
@@ -46,7 +48,9 @@ const routes: Route[] = [
         BrowserModule,
         RouterModule.forRoot(routes),
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MdButtonModule
     ],
     providers: [AuthService, AuthGuard, CanDeactivateGuard],
     bootstrap: [AppComponent]

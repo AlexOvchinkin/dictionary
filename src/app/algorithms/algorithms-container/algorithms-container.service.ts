@@ -37,8 +37,8 @@ export class AlgorithmsContainerService {
 
         // заполним массив имен алгоритмов
         this.algorithmNames = [
-            this.SELECTION,
-            this.TRANSLATE
+            this.TRANSLATE,
+            this.SELECTION
         ]
 
         // подпишемся на результат загрузки массива с бэкенда
@@ -116,8 +116,8 @@ export class AlgorithmsContainerService {
         return [
             {
                 word: {
-                    original: 'mouse',
-                    translate: 'мышь'
+                    original: 'bird',
+                    translate: 'птица'
                 },
                 translates: [
                     {
@@ -133,8 +133,8 @@ export class AlgorithmsContainerService {
                         translate: 'лошадь'
                     },
                     {
-                        original: 'cat',
-                        translate: 'кошка'
+                        original: 'bird',
+                        translate: 'птица'
                     },
                     {
                         original: 'dog',
@@ -144,8 +144,8 @@ export class AlgorithmsContainerService {
             },
             {
                 word: {
-                    original: 'dog',
-                    translate: 'собака'
+                    original: 'car',
+                    translate: 'машина'
                 },
                 translates: [
                     {
@@ -165,15 +165,15 @@ export class AlgorithmsContainerService {
                         translate: 'собака'
                     },
                     {
-                        original: 'cat',
-                        translate: 'кошка'
+                        original: 'car',
+                        translate: 'машина'
                     }
                 ]
             },
             {
                 word: {
-                    original: 'rat',
-                    translate: 'крыса'
+                    original: 'welcome',
+                    translate: 'добро пожаловать'
                 },
                 translates: [
                     {
@@ -181,8 +181,8 @@ export class AlgorithmsContainerService {
                         translate: 'крыса'
                     },
                     {
-                        original: 'cat',
-                        translate: 'кошка'
+                        original: 'welcome',
+                        translate: 'добро пожаловать'
                     },
                     {
                         original: 'dog',
@@ -200,8 +200,8 @@ export class AlgorithmsContainerService {
             },
             {
                 word: {
-                    original: 'horse',
-                    translate: 'лошадь'
+                    original: 'imagination',
+                    translate: 'воображение'
                 },
                 translates: [
                     {
@@ -221,8 +221,8 @@ export class AlgorithmsContainerService {
                         translate: 'кошка'
                     },
                     {
-                        original: 'dog',
-                        translate: 'собака'
+                        original: 'imagination',
+                        translate: 'воображение'
                     }
                 ]
             },
