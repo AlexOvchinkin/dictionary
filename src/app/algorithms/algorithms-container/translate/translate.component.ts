@@ -1,7 +1,15 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {TranslateService} from "./translate.service";
 import {Subject} from "rxjs/Subject";
-import {WordExt} from "../../../types";
+
+// поместил тип сюда, т.к. постоянно
+// Warning export type not found
+type WordExt = {
+  original: string,
+  translate: string,
+  isWrong?: boolean,
+  isRight?: boolean
+}
 
 @Component({
     selector: 'app-translate',

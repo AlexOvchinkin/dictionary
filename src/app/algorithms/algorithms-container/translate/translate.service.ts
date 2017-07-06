@@ -1,6 +1,11 @@
 import {Injectable} from '@angular/core';
-import {WordExt} from "../../../types";
 
+type WordExt = {
+  original: string,
+  translate: string,
+  isWrong?: boolean,
+  isRight?: boolean
+}
 
 @Injectable()
 export class TranslateService {

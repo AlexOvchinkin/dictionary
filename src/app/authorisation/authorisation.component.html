@@ -1,6 +1,6 @@
 <form [formGroup]="formGroup"
       (ngSubmit)="login()"
-      class="registration">
+      class="registration  z-depth-2">
     <h2 class="registration__title">АВТОРИЗАЦИЯ</h2>
     <input type="hidden" class="csrf-token" value="">
     <p class="registration__notice" id="notice"></p>
@@ -32,7 +32,7 @@
         </tr>
         <tr>
             <td colspan="2" class="registration__cell-btn">
-                <button class="registration__btn" type="submit" name="submit-register">ВОЙТИ</button>
+                <button md-raised-button class="registration__btn" type="submit" name="submit-register">ВОЙТИ</button>
             </td>
         </tr>
     </table>

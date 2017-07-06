@@ -1,23 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Subject} from "rxjs/Subject";
+import {CheckLetter, PickLetter} from "../../../types";
 
-export type CheckLetter = {
-    letter: string,
-    isShown: boolean,
-    isEmpty: boolean
-}
 
-export type PickLetter = {
-    letter: string,
-    isShown: boolean,
-    isWrong: boolean
-}
-
-export type UpdateObject = {
-    position: number,
-    checkLetter: CheckLetter,
-    pickLetter: PickLetter
-}
 
 @Injectable()
 export class SelectionService {
@@ -29,7 +14,6 @@ export class SelectionService {
     private answerWasWrong: boolean;
 
     public algorithmEnd$$: Subject<boolean> = new Subject();
-    public updateStream$$: Subject<any> = new Subject();
 
     constructor() { }
 
@@ -59,7 +43,7 @@ export class SelectionService {
             array.push({
                 letter: letter,
                 isShown: false,
-                isEmpty: letter.trim() ? false : true
+                isEmpty: !letter.trim()
             });
         }
 

@@ -8,13 +8,6 @@ export type WordObject = {
     translates: Word[]
 }
 
-export type WordExt = {
-    original: string,
-    translate: string,
-    isWrong?: boolean,
-    isRight?: boolean
-}
-
 export type Algorithm = {
     name: string,
     data: WordObject
@@ -23,6 +16,24 @@ export type Algorithm = {
 export type LearningData = {
     learning: number,
     training: number
+}
+
+export type CheckLetter = {
+  letter: string,
+  isShown: boolean,
+  isEmpty: boolean
+}
+
+export type PickLetter = {
+  letter: string,
+  isShown: boolean,
+  isWrong: boolean
+}
+
+export type UpdateObject = {
+  position: number,
+  checkLetter: CheckLetter,
+  pickLetter: PickLetter
 }
 
 export const HOME_PAGE: string = '';

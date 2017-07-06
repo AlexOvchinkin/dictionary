@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "../../../sources/css/z-depth.css";
 
 .translate-blocked {
     color: gray;
@@ -35,7 +36,6 @@
 }
 
 .translate {
-    box-shadow: 0 2px 5px 1px darkgray;
     border-radius: 2px;
     padding: 20px;
     width: 80%;

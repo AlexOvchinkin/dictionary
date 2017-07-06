@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "../sources/css/z-depth.css";
 
 .registration {
     display: flex;
     flex-direction: column;
     border-radius: 2px;
-    box-shadow: 0 0 5px 2px darkgray;
     left: 50%;
     margin: 20px auto;
     align-items: center;
@@ -70,7 +70,6 @@
     margin-top: 40px;
     padding: 14px;
     border-radius: 2px;
-    box-shadow: 0 2px 5px 1px darkgray;
     transition-duration: 0.2s;
     font-family: 'Roboto', sans-serif;
     width: 100%;

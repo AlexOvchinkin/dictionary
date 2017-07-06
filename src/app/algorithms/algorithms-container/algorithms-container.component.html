@@ -11,7 +11,7 @@
                    [algorithmChanger]="algorithmsContainerService.algorithmChanger$$"></app-selection>
 </div>
 <div *ngIf="askDeactivate"
-     class="deactivate-popup">
+     class="deactivate-popup  z-depth-5">
     <p class="deactivate-popup__question">Завершить тренировку?</p>
     <div class="deactivate-popup__buttons">
         <button md-button class="deactivate-popup__btn" (click)="deactivate(true)">ДА</button>
@@ -21,3 +21,5 @@
 <div *ngIf="askDeactivate"
      class="deactivate-overlay">
 </div>
+<app-preloader *ngIf="!isComponentShown"></app-preloader>
+

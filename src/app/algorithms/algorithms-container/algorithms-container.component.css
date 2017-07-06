@@ -1,3 +1,5 @@
+@import "../../sources/css/z-depth.css";
+
 .container {
     margin: 20px auto;
 }
@@ -10,7 +12,6 @@
     padding: 0 40px;
     background-color: white;
     z-index: 100;
-    box-shadow: 0 2px 5px 1px gray;
     border-radius: 2px;
 }
 
@@ -36,7 +37,7 @@
     color: coral;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 5px 15px;
     transition-duration: 0.3s;
     font-weight: bold;
     margin-left: 5px;

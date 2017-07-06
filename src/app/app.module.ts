@@ -18,6 +18,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CanDeactivateGuard} from "./guards/can-deactivate.guard";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MdButtonModule} from "@angular/material";
+import { PreloaderComponent } from './preloader/preloader.component';
 
 const routes: Route[] = [
     {path: HOME_PAGE, component: WelcomeComponent},
@@ -42,7 +43,8 @@ const routes: Route[] = [
         HeaderComponent,
         RegistrationComponent,
         AuthorisationComponent,
-        WelcomeComponent
+        WelcomeComponent,
+        PreloaderComponent
     ],
     imports: [
         BrowserModule,
