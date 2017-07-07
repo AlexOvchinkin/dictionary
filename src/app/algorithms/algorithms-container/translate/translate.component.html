@@ -1,27 +1,31 @@
 <section class="translate  z-depth-2">
-    <h2 class="translate__title-main">ПЕРЕВОД</h2>
-    <h4 class="translate__title-descr">[ с английского на русский ]</h4>
-    <p class="translate__main-word">
-        {{ testingWord.original }}
-    </p>
-    <button md-raised-button class="translate__sound-btn">ПРОСЛУШАТЬ ЕЩЕ РАЗ</button>
-    <ul class="translate__list">
-        <li *ngFor="let item of translates; let i = index"
-            [ngClass]="{
+  <h2 class="translate__title-main">ПЕРЕВОД</h2>
+  <h4 class="translate__title-descr">[ с английского на русский ]</h4>
+  <p class="translate__main-word">
+    {{ testingWord.original }}
+  </p>
+  <button md-raised-button
+          class="translate__sound-btn"
+          (click)="replay()">
+    ПРОСЛУШАТЬ ЕЩЕ РАЗ
+  </button>
+  <ul class="translate__list">
+    <li *ngFor="let item of translates; let i = index"
+        [ngClass]="{
           'translate__check-word': true,
           'translate-right': item.isRight,
           'translate-wrong': item.isWrong
         }"
-            (click)="checkWord(i)">
-            {{ item.translate }}
-        </li>
-    </ul>
-    <p class="translate__description">
-        <sup>*&nbsp;</sup>
-        выбери мышкой слово-перевод ... или нажми его номер на клавиатуре
-    </p>
-    <p class="translate__description">
-        <sup>**&nbsp;</sup>
-        не забудь включить звук, чтобы слышать произношение
-    </p>
+        (click)="checkWord(i)">
+      {{ item.translate }}
+    </li>
+  </ul>
+  <p class="translate__description">
+    <sup>*&nbsp;</sup>
+    выбери мышкой слово-перевод ... или нажми его номер на клавиатуре
+  </p>
+  <p class="translate__description">
+    <sup>**&nbsp;</sup>
+    не забудь включить звук, чтобы слышать произношение
+  </p>
 </section>

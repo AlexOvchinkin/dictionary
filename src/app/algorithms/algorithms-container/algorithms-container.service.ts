@@ -32,7 +32,7 @@ export class AlgorithmsContainerService {
     // имитация задержки
     setTimeout(() => {
       observer.next(this.loadWordArray());
-    }, 3000);
+    }, 2000);
   });
 
 

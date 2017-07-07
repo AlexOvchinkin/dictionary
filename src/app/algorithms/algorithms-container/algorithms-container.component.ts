@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AlgorithmsContainerService} from './algorithms-container.service';
 import {Algorithm} from '../../types';
 import {Router} from "@angular/router";
-import {Subject} from "rxjs/Subject";
+
 
 @Component({
   selector: 'app-algorithms-container',
@@ -33,10 +33,10 @@ export class AlgorithmsContainerComponent implements OnInit {
     });
 
     // подписка на обновление статуса компонента
-    this.algorithmsContainerService.showComponent$$.subscribe( (isShow: boolean) => {
+    this.algorithmsContainerService.showComponent$$.subscribe((isShow: boolean) => {
       this.isComponentShown = isShow;
       this.updateData();
-    } );
+    });
 
     // подпишемся на результаты кликов по кнопкам всплывающего окна
     this.algorithmsContainerService.deactivateStream$$.subscribe((result: boolean) => {

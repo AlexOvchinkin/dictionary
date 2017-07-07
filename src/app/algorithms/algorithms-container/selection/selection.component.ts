@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Subject} from "rxjs/Subject";
-import {CheckLetter, PickLetter} from "../../../types";
+import {CheckLetter, PickLetter, SOUND_PATH} from "../../../types";
 import {SelectionService} from "./selection.service";
 
 @Component({
@@ -21,6 +21,7 @@ export class SelectionComponent implements OnInit, OnChanges {
 
   public checkArray: CheckLetter[];
   public pickArray: PickLetter[];
+  private audio: HTMLAudioElement;
 
   constructor(public selectionService: SelectionService) {
   }
@@ -30,6 +31,21 @@ export class SelectionComponent implements OnInit, OnChanges {
     this.updateData();
   }
 
+  private updateData(): void {
+    this.checkArray = this.selectionService.getCheckArray();
+    this.pickArray = this.selectionService.getPickArray();
+  }
+
+  public replay(): void {
+  this.playSound(this.word);
+}
+
+  private playSound(soundName: string): void {
+    this.audio.src = `${SOUND_PATH + soundName}.mp3`;
+    this.audio.load();
+    this.audio.play();
+  }
+
   ngOnInit() {
     this.selectionService.algorithmEnd$$.subscribe((answerWasWrong: boolean) => {
       // сообщить контейнеру об результате теста
@@ -37,14 +53,12 @@ export class SelectionComponent implements OnInit, OnChanges {
     });
   }
 
-  private updateData(): void {
-    this.checkArray = this.selectionService.getCheckArray();
-    this.pickArray = this.selectionService.getPickArray();
-  }
-
   ngOnChanges(changes: SimpleChanges): void {
     this.selectionService.setNewWord(this.word);
     this.updateData();
+
+    this.audio = new Audio();
+    this.playSound(this.word);
   }
 
 }

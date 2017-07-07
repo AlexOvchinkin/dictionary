@@ -36,6 +36,8 @@ export type UpdateObject = {
   pickLetter: PickLetter
 }
 
+export const SOUND_PATH: string = 'sources/sounds/';
+
 export const HOME_PAGE: string = '';
 export const ENTER_PAGE: string = 'enter';
 export const TRAINING_PAGE: string = 'training';
