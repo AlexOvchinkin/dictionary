@@ -2,77 +2,84 @@
 @import "../sources/css/z-depth.css";
 
 .enter {
-    display: flex;
-    flex-direction: column;
-    width: 800px;
-    align-items: center;
-    border-radius: 2px;
-    background-color: white;
-    margin: 20px auto;
-    color: #525252;
-    padding: 20px;
-    font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  align-items: center;
+  border-radius: 2px;
+  background-color: white;
+  margin: 20px auto;
+  color: #525252;
+  font-family: 'Roboto', sans-serif;
 }
 
 .enter__title {
-    margin: 0;
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 60px;
-    color: #454545;
+  margin: 0;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 60px;
+  color: #525252;
+  background-color: #FFF0A5;
+  width: 100%;
+  padding: 10px 0;
+  font-family: 'Roboto', sans-serif;
+  border-bottom: 1px solid #f2e397;
 }
 
 .enter__data {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 40px;
 }
 
 .enter__data-left {
-    display: flex;
-    flex-direction: column;
-    font-size: 26px;
-    font-style: italic;
-    font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .enter__number {
-    font-weight: bold;
-    color: red;
+  font-weight: bold;
+  color: #8E2800;
+  font-style: italic;
+  text-decoration: underline;
 }
 
 .enter__data-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .enter__btn {
-    text-align: center;
-    background-color: #4183D7;
-    border: 1px solid #4183D7;
-    border-radius: 2px;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    padding: 10px 30px;
-    transition-duration: 0.3s;
-    cursor: pointer;
+  text-align: center;
+  background-color: #468966;
+  border-radius: 2px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  padding: 15px 30px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  text-shadow: #387155 0 0 2px;
+  font-weight: bold;
 }
 
 .enter__btn:hover {
-    background-color: #3c6bba;
-    border-color: #3c6bba;
+  background-color: #387155;
 }
 
-.btn-orange {
-    background-color: coral;
-    border: 1px solid coral;
+.btn-secondary {
+  background-color: #FFB03B;
+  color: white;
+  text-shadow: #b47732 0 0 2px;
 }
 
-.btn-orange:hover {
-    background-color: #dd7550;
-    border-color: #dd7550;
+.btn-secondary:hover {
+  background-color: #b47732;
 }
 
 

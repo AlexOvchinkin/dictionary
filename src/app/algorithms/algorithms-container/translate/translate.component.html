@@ -1,20 +1,19 @@
 <section class="translate  z-depth-2">
   <h2 class="translate__title-main">ПЕРЕВОД</h2>
-  <h4 class="translate__title-descr">[ с английского на русский ]</h4>
   <p class="translate__main-word">
     {{ testingWord.original }}
   </p>
-  <button md-raised-button
-          class="translate__sound-btn"
+  <div class="translate__sound-btn  z-depth-1"
           (click)="replay()">
     ПРОСЛУШАТЬ ЕЩЕ РАЗ
-  </button>
+  </div>
   <ul class="translate__list">
     <li *ngFor="let item of translates; let i = index"
         [ngClass]="{
           'translate__check-word': true,
           'translate-right': item.isRight,
-          'translate-wrong': item.isWrong
+          'translate-wrong': item.isWrong,
+          'z-depth-1': true
         }"
         (click)="checkWord(i)">
       {{ item.translate }}

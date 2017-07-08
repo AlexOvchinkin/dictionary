@@ -1,8 +1,5 @@
 <section class="selection  z-depth-2">
-
   <h2 class="selection__title-main">ПОДБОР</h2>
-  <h4 class="selection__title-descr">[ по буквам ]</h4>
-
   <ul class="selection__checklist">
     <li *ngFor="let item of checkArray"
         [ngClass]="{'selection__check-letter': true,
@@ -12,16 +9,16 @@
     </li>
   </ul>
 
-  <button md-raised-button
-          class="selection__sound-btn"
+  <div class="selection__sound-btn  z-depth-1"
           (click)="replay()">
     ПРОСЛУШАТЬ ЕЩЕ РАЗ
-  </button>
+  </div>
 
   <ul class="selection__pick-list">
     <li *ngFor="let item of pickArray; let i = index"
         [ngClass]="{'selection__pick-letter': true,
-                        'selection-wrong': item.isWrong}"
+                    'selection-wrong': item.isWrong,
+                    'z-depth-1': true}"
         [style.display]="item.isShown ? 'block' : 'none'"
         (click)="selectPickLetter(i)">
       {{ item.letter }}

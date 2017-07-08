@@ -7,66 +7,69 @@
 }
 
 .registration {
-    display: flex;
-    flex-direction: column;
-    border-radius: 2px;
-    left: 50%;
-    margin: 20px auto;
-    align-items: center;
-    padding: 20px 40px;
-    width: 600px;
-    font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  left: 50%;
+  margin: 20px auto;
+  align-items: center;
+  padding: 20px 40px;
+  width: 600px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .registration__title {
 
-    color: #457070;
-    font-size: 34px;
+  color: #468966;
+  font-size: 34px;
 }
 
 .registration__table {
-    color: #457070;
-    font-family: 'Roboto', sans-serif;
+  color: #468966;
+  font-family: 'Roboto', sans-serif;
 }
 
 .registration__text {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .registration__field {
-    font-size: 24px;
-    width: 350px;
-    border: none;
-    border-bottom: 2px solid #457070;
+  font-size: 24px;
+  color: #468966;
+  width: 350px;
+  border: none;
+  border-bottom: 2px solid #468966;
 }
 
 .registration__field:focus {
-    outline: none;
+  outline: none;
 }
 
 .registration__btn {
-    background-color: #f56530;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-    margin-top: 40px;
-    padding: 14px 0;
-    border-radius: 2px;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-    transition-duration: 0.2s;
+  background-color: #FFB03B;
+  text-shadow: #b47732 0 0 2px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  margin-top: 40px;
+  padding: 14px 0;
+  border-radius: 2px;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  transition-duration: 0.2s;
+  font-weight: bold;
 }
 
 .registration__btn:hover {
-    background-color: #c86030;
+  background-color: #b47732;
 }
 
 .registration__cell-btn {
-    text-align: center;
+  text-align: center;
 }
 
 .registration__descr {
-    color: gray;
-    font-style: italic;
-    font-size: 18px;
+  color: gray;
+  font-style: italic;
+  font-size: 18px;
 }
