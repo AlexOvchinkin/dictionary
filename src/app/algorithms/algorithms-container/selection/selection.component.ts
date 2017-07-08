@@ -26,20 +26,25 @@ export class SelectionComponent implements OnInit, OnChanges {
   constructor(public selectionService: SelectionService) {
   }
 
+  // обработчик выбора буквы
   public selectPickLetter(num: number): void {
     this.selectionService.checkPickLetter(num);
-    this.updateData();
   }
 
+  // обновляет массивы компонента из сервиса
   private updateData(): void {
     this.checkArray = this.selectionService.getCheckArray();
     this.pickArray = this.selectionService.getPickArray();
   }
 
+  // обработчик кнопки прослушивания слова
   public replay(): void {
-  this.playSound(this.word);
-}
+    this.playSound(this.word);
+  }
 
+  // проигрывает звуковой файл
+  // имя файла должно соответствовать слову
+  // работает только на серверах nginx/apache
   private playSound(soundName: string): void {
     this.audio.src = `${SOUND_PATH + soundName}.mp3`;
     this.audio.load();
@@ -47,6 +52,7 @@ export class SelectionComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
+    // подпишемся на событие окончания теста
     this.selectionService.algorithmEnd$$.subscribe((answerWasWrong: boolean) => {
       // сообщить контейнеру об результате теста
       this.algorithmChanger.next(answerWasWrong);
