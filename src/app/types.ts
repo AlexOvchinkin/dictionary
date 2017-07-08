@@ -36,7 +36,14 @@ export type UpdateObject = {
   pickLetter: PickLetter
 }
 
+export interface ILoginData {
+  email: string,
+  password: string,
+  remember: boolean
+}
+
 export const SOUND_PATH: string = 'sources/sounds/';
+export const PASSWORD_MIN_LENGTH: number = 3;
 
 export const HOME_PAGE: string = '';
 export const ENTER_PAGE: string = 'enter';

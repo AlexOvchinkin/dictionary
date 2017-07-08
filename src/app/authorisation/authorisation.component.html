@@ -1,40 +1,53 @@
 <form [formGroup]="formGroup"
-      (ngSubmit)="login()"
       class="registration  z-depth-2">
-    <h2 class="registration__title">АВТОРИЗАЦИЯ</h2>
-    <input type="hidden" class="csrf-token" value="">
-    <p class="registration__notice" id="notice"></p>
+  <h2 class="registration__title">АВТОРИЗАЦИЯ</h2>
+  <p class="registration__notice" id="notice"></p>
 
-    <table class="registration__table" cellspacing="10" cellpadding="5">
-        <tr>
-            <td><label class="registration__text">Почта</label></td>
-            <td><input formControlName="email"
-                       class="registration__field"
-                       type="email" id="email" name="email">
-            </td>
-        </tr>
-        <tr>
-            <td><label class="registration__text">Пароль</label></td>
-            <td><input formControlName="password"
-                       class="registration__field"
-                       type="password" id="password" name="password">
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <label class="registration__text" for="remember">Запомнить меня
-                    <input formControlName="remember"
-                           class="registration__remember-box"
-                           type="checkbox" id="remember" name="remember">
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" class="registration__cell-btn">
-                <button md-raised-button class="registration__btn" type="submit" name="submit-register">ВОЙТИ</button>
-            </td>
-        </tr>
-    </table>
+  <table class="registration__table" cellspacing="10" cellpadding="5">
+    <tr>
+      <td><label class="registration__text">Почта</label></td>
+      <td><input formControlName="email"
+                 (keyup.enter)="emailEnter()"
+                 (blur)="emailBlur()"
+                 [ngClass]="{
+                       registration__field: true,
+                       invalid: emailInvalid
+                 }"
+                 type="email" id="email" name="email">
+      </td>
+    </tr>
+    <tr>
+      <td><label class="registration__text">Пароль</label></td>
+      <td><input formControlName="password"
+                 (keyup.enter)="passwordEnter()"
+                 (blur)="passwordBlur()"
+                 [ngClass]="{
+                      registration__field: true,
+                      invalid: passwordInvalid
+                 }"
+                 type="password" id="password" name="password">
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <label class="registration__text" for="remember">Запомнить меня
+          <input formControlName="remember"
+                 class="registration__remember-box"
+                 type="checkbox" id="remember" name="remember">
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="registration__cell-btn">
+        <div class="registration__btn  z-depth-1"
+                type="button"
+                name="submit-register"
+                (click)="login()">
+          ВОЙТИ
+        </div>
+      </td>
+    </tr>
+  </table>
 
 </form>

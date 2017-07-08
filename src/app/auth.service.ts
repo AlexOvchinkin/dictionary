@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Router} from "@angular/router";
-import {ENTER_PAGE, HOME_PAGE} from "./types";
+import {ENTER_PAGE, HOME_PAGE, ILoginData} from "./types";
 
 @Injectable()
 export class AuthService {
@@ -9,13 +9,13 @@ export class AuthService {
     }
 
     // осуществляет проверку логина/пароля и устанавливает статус пользователя
-    public login(login: string, password: string, remember: boolean): void {
+    public login(loginData: ILoginData): void {
         // пока заглушка без бэкенда
-        if (login === 'user' && password === '123') {
-            if (remember) {
-                localStorage.setItem('user', login);
+        if (loginData.email === 'user@gmail.com' && loginData.password === '123') {
+            if (loginData.remember) {
+                localStorage.setItem('user', loginData.email);
             } else {
-                sessionStorage.setItem('user', login);
+                sessionStorage.setItem('user', loginData.email);
             }
 
         }
@@ -37,6 +37,7 @@ export class AuthService {
 
     // проверяет - залогинен ли пользователь
     public isLogged(): boolean {
+      // нужно дополнить проверкой пароля (или хэша) на бэкенде
         if (localStorage.getItem('user') || sessionStorage.getItem('user')) {
             return true;
         }
