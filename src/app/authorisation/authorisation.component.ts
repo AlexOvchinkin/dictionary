@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../auth.service";
 import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
-import {HOME_PAGE, PASSWORD_MIN_LENGTH, REGISTRATION_PAGE} from "../types";
+import {EMAIL_PATTERN, PASSWORD_MIN_LENGTH} from "../types";
 
 @Component({
   selector: 'app-authorisation',
@@ -20,11 +20,10 @@ export class AuthorisationComponent implements OnInit {
   ngOnInit() {
     this.emailInvalid = false;
     this.passwordInvalid = false;
-    let rxEmailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     // подключимся к форме
     this.formGroup = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.pattern(rxEmailPattern)]],
+      email: ['', [Validators.required, Validators.pattern(EMAIL_PATTERN)]],
       password: ['', [Validators.required, Validators.minLength(PASSWORD_MIN_LENGTH)]],
       remember: ['']
     });

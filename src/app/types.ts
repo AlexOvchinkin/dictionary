@@ -44,6 +44,7 @@ export interface ILoginData {
 
 export const SOUND_PATH: string = 'sources/sounds/';
 export const PASSWORD_MIN_LENGTH: number = 3;
+export const EMAIL_PATTERN: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 export const HOME_PAGE: string = '';
 export const ENTER_PAGE: string = 'enter';
